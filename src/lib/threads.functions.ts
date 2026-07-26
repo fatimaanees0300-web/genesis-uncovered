@@ -68,10 +68,11 @@ export const getThreadMessages = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
 
     const messages = (rows ?? []).map((row) => ({
-      id: row.client_message_id ?? row.id,
+      id: (row.client_message_id ?? row.id) as string,
       role: row.role as "user" | "assistant",
-      parts: (row.parts ?? []) as UIMessage["parts"],
-    })) as UIMessage[];
+      parts: (row.parts ?? []) as Json,
+    }));
 
     return { thread: thread.data, messages };
+
   });
