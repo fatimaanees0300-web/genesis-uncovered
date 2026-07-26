@@ -14,6 +14,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedLibraryRouteImport } from './routes/_authenticated/library'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedCompareRouteImport } from './routes/_authenticated/compare'
@@ -42,6 +43,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedLibraryRoute = AuthenticatedLibraryRouteImport.update({
   id: '/library',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/compare': typeof AuthenticatedCompareRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/library': typeof AuthenticatedLibraryRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/api/chat': typeof ApiChatRoute
   '/discover/$topic': typeof AuthenticatedDiscoverTopicRoute
 }
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/compare': typeof AuthenticatedCompareRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/library': typeof AuthenticatedLibraryRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/api/chat': typeof ApiChatRoute
   '/discover/$topic': typeof AuthenticatedDiscoverTopicRoute
 }
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/_authenticated/compare': typeof AuthenticatedCompareRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/library': typeof AuthenticatedLibraryRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/api/chat': typeof ApiChatRoute
   '/_authenticated/discover/$topic': typeof AuthenticatedDiscoverTopicRoute
 }
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | '/compare'
     | '/dashboard'
     | '/library'
+    | '/profile'
     | '/api/chat'
     | '/discover/$topic'
   fileRoutesByTo: FileRoutesByTo
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/compare'
     | '/dashboard'
     | '/library'
+    | '/profile'
     | '/api/chat'
     | '/discover/$topic'
   id:
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/_authenticated/compare'
     | '/_authenticated/dashboard'
     | '/_authenticated/library'
+    | '/_authenticated/profile'
     | '/api/chat'
     | '/_authenticated/discover/$topic'
   fileRoutesById: FileRoutesById
@@ -176,6 +188,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/library': {
       id: '/_authenticated/library'
       path: '/library'
@@ -211,6 +230,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedCompareRoute: typeof AuthenticatedCompareRoute
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
   AuthenticatedLibraryRoute: typeof AuthenticatedLibraryRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
   AuthenticatedDiscoverTopicRoute: typeof AuthenticatedDiscoverTopicRoute
 }
 
@@ -218,6 +238,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedCompareRoute: AuthenticatedCompareRoute,
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
   AuthenticatedLibraryRoute: AuthenticatedLibraryRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
   AuthenticatedDiscoverTopicRoute: AuthenticatedDiscoverTopicRoute,
 }
 
