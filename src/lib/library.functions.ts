@@ -32,7 +32,7 @@ export const saveReport = createServerFn({ method: "POST" })
         user_id: context.userId,
         topic: data.report.topic,
         summary: data.report.overview?.slice(0, 400) ?? null,
-        content: data.report as unknown as Record<string, unknown>,
+        content: data.report as unknown as Json,
         collection: data.collection?.trim() || "General",
       })
       .select("id")
