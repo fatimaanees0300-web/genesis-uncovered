@@ -57,9 +57,10 @@ function Discover() {
   const quizMutation = useMutation({
     mutationFn: () => getQuiz({ data: { topic } }),
     onSuccess: (data) => {
-      setQuiz(data.questions);
+      setQuiz(data);
       setAnswers({});
     },
+
     onError: (error: Error) => toast.error(error.message),
   });
 
