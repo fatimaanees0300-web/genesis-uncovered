@@ -1,14 +1,15 @@
-# 🌌 OriginVerse — Discover the Origins Behind Everything
+# 🌌 OriginVerse  
+## Discover the Origins Behind Everything
 
 <p align="center">
-  <b>An AI-powered knowledge exploration platform that uncovers the history, origin, and evolution behind words, inventions, people, ideas, and concepts.</b>
+  <b>An AI-powered knowledge exploration platform that uncovers the origin, history, and evolution behind words, inventions, people, concepts, and ideas.</b>
 </p>
 
 ---
 
 # 🚀 Project Links
 
-🌐 **Live Application:**  
+🌐 **Live Deployed Application:**  
 [https://genesis-uncovered.vercel.app/](https://genesis-uncovered.vercel.app/)
 
 💻 **GitHub Repository:**  
@@ -18,112 +19,132 @@
 
 # 📖 About OriginVerse
 
-**OriginVerse** is an AI-powered exploration platform designed to reveal the hidden stories behind everything around us.
+## What is OriginVerse?
 
-The application allows users to discover the origin, history, evolution, and significance of different topics including inventions, words, concepts, historical personalities, and cultural phenomena.
+**OriginVerse** is an AI-powered knowledge exploration platform designed to uncover the hidden stories behind everything around us.
 
-Instead of only showing information about **what something is**, OriginVerse focuses on answering:
+The application allows users to search for any topic and discover:
 
-- Where did it come from?
-- How did it evolve?
-- Who contributed to its development?
-- Why does it matter today?
+- Its origin and background.
+- Historical development.
+- Evolution timeline.
+- Important contributors.
+- Major milestones.
+- Interesting facts.
+
+OriginVerse goes beyond traditional information searching by focusing on the journey behind knowledge.
+
+It answers:
+
+- **Where did it come from?**
+- **How did it evolve?**
+- **Why does it matter today?**
 
 ---
 
 # 🎯 Problem Statement
 
-In the modern digital world, information is easily available, but meaningful context is often missing.
+In today's digital world, information is easily available, but meaningful context is often missing.
 
-Students, researchers, and curious learners frequently encounter difficulties while trying to understand:
+Students, researchers, and curious learners often face problems such as:
 
-- The historical journey of inventions.
-- The roots and evolution of words.
-- The development of scientific discoveries.
-- The stories behind important people and ideas.
+- Facts are available but disconnected.
+- Historical information is scattered across different sources.
+- Understanding the evolution of ideas requires extensive research.
+- Learning becomes focused on memorization instead of understanding.
 
-Information is usually scattered across multiple sources, making learning time-consuming and disconnected.
+For example:
+
+A student may know **what an airplane is**, but may not know:
+
+- Who contributed to its invention?
+- How aviation evolved?
+- What discoveries made modern airplanes possible?
 
 ## Solution
 
-**OriginVerse solves this problem by providing a centralized AI-powered platform that transforms curiosity into structured knowledge.**
+OriginVerse solves this problem by providing a centralized AI-powered platform where users can explore complete origin stories in a structured and engaging way.
 
-It helps users explore complete origin stories through:
+It is designed for:
 
-- Historical explanations.
-- Chronological timelines.
-- Important contributors.
-- Evolution patterns.
-- Interesting facts.
-
----
-
-# 👥 Target Users
-
-OriginVerse is designed for:
-
-📚 **Students**  
-To understand concepts beyond textbooks.
-
-🔍 **Researchers**  
-To quickly explore historical context.
-
-🌍 **Curious Learners**  
-To discover the stories behind everyday things.
-
-🧠 **Knowledge Enthusiasts**  
-To explore origins of ideas, inventions, and concepts.
+- 📚 Students who want deeper conceptual understanding.
+- 🔍 Researchers exploring historical context.
+- 🌍 Curious learners discovering the world around them.
+- 🧠 Knowledge enthusiasts interested in origins and evolution.
 
 ---
 
 # ✨ Features
 
-## 🔎 AI Origin Search
+## 🔎 1. AI-Powered Origin Search
 
-Users can enter any topic and discover its complete background.
+Users can search any topic and discover its complete history and origin.
 
 Examples:
 
-- History of airplanes
-- Origin of the word "Medicine"
-- Evolution of smartphones
-- Story behind the internet
+- History of airplanes.
+- Origin of medical terminology.
+- Evolution of computers.
+- Story behind the internet.
 
 ---
 
-## 🤖 AI-Powered Knowledge Generation
+## 🤖 2. AI Origin Explorer
 
-OriginVerse uses Artificial Intelligence to:
+The AI assistant can:
 
-- Understand user queries.
-- Research conceptual backgrounds.
-- Generate structured explanations.
+- Understand natural language queries.
+- Analyze user searches.
+- Generate detailed explanations.
 - Simplify complex information.
-- Create engaging educational responses.
+- Highlight important events and contributors.
+- Provide meaningful historical context.
 
 ---
 
-## 📜 Historical Timeline
+## 📜 3. Timeline Generation
 
-The application presents information through chronological progression:
+OriginVerse creates chronological journeys showing:
 
 - Beginning/origin.
-- Major milestones.
-- Important discoveries.
-- Modern developments.
-
-This allows users to understand how things evolved over time.
+- Important milestones.
+- Major discoveries.
+- Evolution stages.
+- Present-day relevance.
 
 ---
 
-## 🌍 Multi-Domain Exploration
+## ⚖️ 4. Comparison Feature
 
-Users can explore topics from different fields:
+Users can compare related concepts and explore:
+
+- Similarities.
+- Differences.
+- Historical development.
+- Key characteristics.
+
+This helps users understand relationships between different topics.
+
+---
+
+## 🌙 5. Dark Mode Support
+
+OriginVerse includes a dark mode interface that provides:
+
+- Better visual comfort.
+- Improved accessibility.
+- Enhanced user experience in low-light environments.
+
+---
+
+## 🌍 6. Multi-Domain Knowledge Exploration
+
+Users can explore origins from multiple fields:
 
 - Science
 - Technology
-- Language
 - History
+- Language
 - Culture
 - Inventions
 - Famous personalities
@@ -131,99 +152,151 @@ Users can explore topics from different fields:
 
 ---
 
-## 🎨 Modern User Interface
+## 🎨 7. Interactive User Interface
 
 The application provides:
 
-- Clean and intuitive design.
-- Easy navigation.
-- Responsive experience.
-- Interactive learning environment.
+- Modern design.
+- Simple navigation.
+- Responsive layout.
+- Smooth exploration experience.
+- User-friendly learning environment.
+
+---
+
+# 📸 Screenshots — OriginVerse In Action
+
+The following screenshots demonstrate the major features and user experience of OriginVerse.
+
+---
+
+## 🏠 1. Homepage Interface
+
+The homepage provides users with an intuitive entry point to explore origins and discover historical insights using AI.
+
+![OriginVerse Homepage](screenshots/homepage.png)
+
+---
+
+## ⚖️ 2. Comparison Feature
+
+The comparison interface allows users to analyze differences between related topics, concepts, or historical developments.
+
+![OriginVerse Comparison](screenshots/comparison.png)
+
+---
+
+## 🌙 3. Dark Mode Experience
+
+The dark mode interface provides a visually comfortable experience for users while maintaining accessibility and readability.
+
+![OriginVerse Dark Mode](screenshots/dark-mode.png)
+
+---
+
+## 🔎 4. General Search & AI Exploration
+
+Users can search any topic and receive AI-generated origin stories, historical context, and structured explanations.
+
+![OriginVerse General Search](screenshots/general-search.png)
+
+---
+
+## 📜 5. Timeline Visualization
+
+The timeline feature presents historical evolution chronologically, helping users understand how ideas, inventions, and concepts developed over time.
+
+![OriginVerse Timeline](screenshots/timeline.png)
 
 ---
 
 # 🧠 AI Feature Details
 
-## OriginVerse AI Explorer
+## OriginVerse AI Knowledge Engine
 
-The main AI feature acts as a personal origin research assistant.
+The core AI feature works as an intelligent historical research assistant.
 
 When a user enters a topic, the AI generates:
 
-1. Topic introduction.
-2. Historical origin.
-3. Timeline of development.
-4. Important contributors.
-5. Evolution over time.
-6. Present-day importance.
-7. Interesting facts.
+1. Introduction of the topic.
+2. Historical background.
+3. Origin information.
+4. Timeline of development.
+5. Important contributors.
+6. Evolution over time.
+7. Current significance.
+8. Interesting facts.
 
 ---
 
 # 📝 AI System Prompt
 
-The AI assistant was designed using the following instructions:
+The AI assistant was developed using the following instructions:
 
 ```
 You are OriginVerse AI, an expert educational and historical research assistant.
 
-Your purpose is to uncover the origin, history, and evolution of any topic provided by the user.
+Your role is to uncover the origin, history, and evolution of any topic provided by the user.
 
-For every user query:
+For every query:
 
-1. Explain the topic clearly.
-2. Describe its origin and background.
-3. Provide a chronological timeline.
-4. Mention important people, discoveries, or events.
+1. Explain what the topic is.
+2. Describe its origin and historical background.
+3. Provide a chronological timeline of important developments.
+4. Mention important people, discoveries, and events.
 5. Explain how it evolved into its current form.
-6. Include interesting facts and lesser-known information.
-7. Keep answers accurate, educational, and engaging.
-8. Adapt explanations according to the user's level of understanding.
+6. Include interesting and lesser-known facts.
+7. Keep explanations accurate, engaging, and educational.
+8. Adapt explanations according to the user's understanding level.
 
 Your goal is to transform curiosity into meaningful knowledge.
 ```
 
 ---
 
-# 🛠️ Tools, Technologies & Services Used
+# 🛠️ Tools, Services & AI Models Used
 
 ## 💻 Lovable
 
-**Purpose:**
+Used for:
 
 - AI-assisted application development.
 - UI generation.
 - Rapid prototyping.
 - Full-stack application creation.
 
-🔗 https://lovable.dev/
+Website:
+
+https://lovable.dev/
 
 ---
 
 ## ▲ Vercel
 
-**Purpose:**
+Used for:
 
-- Application deployment.
-- Production hosting.
+- Production deployment.
+- Application hosting.
 - Continuous deployment.
 
-🔗 https://vercel.com/
+Live Application:
+
+https://genesis-uncovered.vercel.app/
 
 ---
 
 ## 🐙 GitHub
 
-**Purpose:**
+Used for:
 
 - Source code management.
-- Repository hosting.
 - Version control.
-- Project documentation.
+- Repository hosting.
+- Documentation.
 
 Repository:
 
-[Genesis-Uncovered GitHub Repository](https://github.com/fatimaanees0300-web/genesis-uncovered.git)
+https://github.com/fatimaanees0300-web/genesis-uncovered.git
 
 ---
 
@@ -234,22 +307,34 @@ AI was used for:
 - Natural language understanding.
 - Query interpretation.
 - Knowledge generation.
-- Educational content organization.
+- Historical explanation creation.
+- Organizing educational content.
+
+AI Model:
+
+- Large Language Model (LLM)-based AI assistant.
 
 ---
 
 # 📂 Project Structure
 
 ```
-OriginVerse/
+genesis-uncovered/
+
 │
 ├── src/
 │   ├── components/
 │   ├── pages/
 │   ├── assets/
-│   └── application files
 │
 ├── public/
+│
+├── screenshots/
+│   ├── homepage.png
+│   ├── comparison.png
+│   ├── dark-mode.png
+│   ├── general-search.png
+│   └── timeline.png
 │
 ├── package.json
 │
@@ -260,9 +345,11 @@ OriginVerse/
 
 ---
 
-# ⚙️ How To Run The Project Locally
+# ⚙️ How To Run The Project
 
-## Step 1: Clone Repository
+Follow these steps to run OriginVerse locally.
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/fatimaanees0300-web/genesis-uncovered.git
@@ -270,7 +357,7 @@ git clone https://github.com/fatimaanees0300-web/genesis-uncovered.git
 
 ---
 
-## Step 2: Navigate Into Project Folder
+## 2. Navigate Into Project Folder
 
 ```bash
 cd genesis-uncovered
@@ -278,9 +365,7 @@ cd genesis-uncovered
 
 ---
 
-## Step 3: Install Dependencies
-
-Using npm:
+## 3. Install Dependencies
 
 ```bash
 npm install
@@ -288,7 +373,7 @@ npm install
 
 ---
 
-## Step 4: Start Development Server
+## 4. Start Development Server
 
 ```bash
 npm run dev
@@ -314,37 +399,48 @@ Add the required credentials according to the configured AI services.
 
 ---
 
-# 🚀 Future Enhancements
+# 🚀 Future Improvements
 
-Future improvements may include:
+Possible future enhancements:
 
 - User accounts and saved discoveries.
 - AI-generated visual timelines.
-- Voice-based origin exploration.
+- Voice-based exploration.
 - Multi-language support.
-- Academic references and citations.
-- Personalized learning journeys.
+- Academic references.
+- Personalized learning paths.
+- Community knowledge sharing.
 
 ---
 
-# 👩‍💻 Project Information
+# 📌 Project Information
 
 | Category | Details |
 |---|---|
-| App Name | OriginVerse |
+| Application Name | OriginVerse |
+| Purpose | AI-powered origin and history exploration platform |
 | Development Platform | Lovable |
 | Deployment Platform | Vercel |
-| Source Code | [GitHub Repository](https://github.com/fatimaanees0300-web/genesis-uncovered.git) |
-| Live Demo | [OriginVerse](https://genesis-uncovered.vercel.app/) |
+| Source Code | GitHub |
+| Live URL | https://genesis-uncovered.vercel.app/ |
 
 ---
 
 # 🌟 Vision
 
-OriginVerse aims to make learning deeper and more meaningful by helping people understand not only **what something is**, but also:
+OriginVerse aims to make learning deeper and more meaningful by helping people discover not only **what something is**, but also:
 
 **where it came from, how it evolved, and why it matters.**
 
 > Every invention has a story.  
 > Every word has a journey.  
 > Every idea has an origin.
+
+---
+
+# 👩‍💻 Created With
+
+❤️ Lovable  
+🚀 Vercel  
+🐙 GitHub  
+🤖 Artificial Intelligence
