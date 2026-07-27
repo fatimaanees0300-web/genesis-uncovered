@@ -174,15 +174,21 @@ function AuthPage() {
                 placeholder="••••••••"
               />
             </div>
-            <Button type="submit" variant="hero" className="w-full" size="lg" disabled={busy}>
+            <Button
+              type="submit"
+              variant="hero"
+              className="pressable w-full"
+              size="lg"
+              disabled={busy}
+            >
               {busy ? "Please wait…" : mode === "signup" ? "Create account" : "Sign in"}
             </Button>
           </form>
 
-          <div className="mt-5 flex items-center justify-between text-sm">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-2 text-sm">
             <button
               type="button"
-              className="text-muted-foreground hover:text-foreground"
+              className="rounded-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
             >
               {mode === "signup" ? "Have an account? Sign in" : "New here? Create account"}
@@ -191,12 +197,13 @@ function AuthPage() {
               <button
                 type="button"
                 onClick={forgotPassword}
-                className="text-muted-foreground hover:text-foreground"
+                className="rounded-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Forgot password?
               </button>
             )}
           </div>
+
         </div>
         <p className="mt-6 text-center text-sm text-muted-foreground">
           <Link to="/" className="hover:text-foreground">
