@@ -64,7 +64,8 @@ const CONFIDENCE_STYLES: Record<string, string> = {
 export function ReportView({ report }: { report: OriginReport }) {
   return (
     <div className="space-y-4">
-      <div className="glass-card rounded-3xl p-6">
+      <div className="glass-card gradient-ring relative isolate animate-fade-up overflow-hidden rounded-[1.75rem] p-8">
+        <div className="blob -z-10 right-0 top-0 size-[260px] bg-primary/20" aria-hidden="true" />
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary">{report.category}</Badge>
           <span
@@ -77,17 +78,20 @@ export function ReportView({ report }: { report: OriginReport }) {
             {report.confidence} confidence
           </span>
         </div>
-        <h1 className="font-display mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+        <h1 className="font-display mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
           The origin of <span className="gradient-text">{report.topic}</span>
         </h1>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{report.overview}</p>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          {report.overview}
+        </p>
         {report.confidenceNote && (
-          <p className="mt-3 flex gap-2 rounded-xl bg-muted/60 p-3 text-xs text-muted-foreground">
+          <p className="mt-4 flex gap-2 rounded-2xl bg-muted/60 p-4 text-xs leading-relaxed text-muted-foreground">
             <TriangleAlert className="mt-0.5 size-3.5 shrink-0" />
             {report.confidenceNote}
           </p>
         )}
       </div>
+
 
       {REPORT_SECTIONS.filter((s) => s.key !== "overview").map((section) => {
         const value = report[section.key];
