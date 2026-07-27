@@ -100,31 +100,44 @@ function AuthPage() {
   }
 
   return (
-    <div className="grid min-h-screen place-items-center bg-background px-4 py-12">
-      <div className="halo pointer-events-none absolute inset-x-0 top-0 -z-10 h-[380px]" />
-      <div className="w-full max-w-md">
+    <div className="relative isolate grid min-h-screen place-items-center overflow-hidden bg-background px-5 py-14">
+      <div className="halo pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px]" />
+      <div className="dot-grid pointer-events-none absolute inset-0 -z-10 opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000,transparent)]" />
+      <div className="blob -z-10 left-[-10%] top-10 size-[320px] bg-primary/30" aria-hidden="true" />
+      <div
+        className="blob -z-10 right-[-10%] top-40 size-[340px] bg-cyan/30 [animation-delay:-7s]"
+        aria-hidden="true"
+      />
+      <div className="w-full max-w-md animate-fade-up">
         <div className="flex justify-center">
           <Logo />
         </div>
-        <div className="glass-card mt-8 rounded-3xl p-7">
-          <h1 className="font-display text-2xl font-extrabold">
+        <div className="glass-card gradient-ring mt-8 rounded-[1.75rem] p-8 shadow-[var(--shadow-lift)]">
+          <h1 className="font-display text-2xl font-extrabold tracking-tight">
             {mode === "signup" ? "Create your account" : "Welcome back"}
           </h1>
-          <p className="mt-1.5 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted-foreground">
             {mode === "signup"
               ? "Start exploring the origin of everything."
               : "Sign in to continue your discoveries."}
           </p>
 
-          <Button variant="outline" className="mt-6 w-full" onClick={googleSignIn} type="button">
+          <Button
+            variant="outline"
+            size="lg"
+            className="pressable mt-6 w-full"
+            onClick={googleSignIn}
+            type="button"
+          >
             Continue with Google
           </Button>
 
-          <div className="my-5 flex items-center gap-3 text-xs text-muted-foreground">
+          <div className="my-6 flex items-center gap-3 text-xs font-medium text-muted-foreground">
             <span className="h-px flex-1 bg-border" />
             or use email
             <span className="h-px flex-1 bg-border" />
           </div>
+
 
           <form onSubmit={onSubmit} className="space-y-4">
             {mode === "signup" && (
