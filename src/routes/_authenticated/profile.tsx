@@ -68,24 +68,36 @@ function Profile() {
   });
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
-      <div>
-        <h1 className="font-display text-3xl font-extrabold tracking-tight">Profile</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{user?.email}</p>
+    <div className="mx-auto max-w-2xl space-y-8">
+      <div className="flex items-center gap-4">
+        <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-brand)] text-lg font-extrabold text-primary-foreground shadow-[var(--shadow-lift)]">
+          {(name || user?.email || "?").charAt(0).toUpperCase()}
+        </span>
+        <div className="min-w-0">
+          <h1 className="font-display truncate text-3xl font-extrabold tracking-tight">
+            {name || "Profile"}
+          </h1>
+          <p className="mt-1 truncate text-sm text-muted-foreground">{user?.email}</p>
+        </div>
       </div>
 
-      <div className="glass-card space-y-5 rounded-2xl p-6">
-        <div className="space-y-1.5">
+      <div className="glass-card space-y-6 rounded-3xl p-7">
+        <div className="space-y-2">
           <Label htmlFor="display-name">Display name</Label>
-          <Input id="display-name" value={name} onChange={(e) => setName(e.target.value)} />
+          <Input
+            id="display-name"
+            className="h-11 rounded-2xl"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           <Label htmlFor="language">Preferred language</Label>
           <select
             id="language"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
-            className="h-10 w-full rounded-xl border border-input bg-card px-3 text-sm"
+            className="h-11 w-full rounded-2xl border border-input bg-card px-3.5 text-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-ring"
           >
             {LANGUAGES.map((item) => (
               <option key={item.code} value={item.code}>
@@ -94,26 +106,32 @@ function Profile() {
             ))}
           </select>
         </div>
-        <div className="flex items-center justify-between rounded-xl border border-border p-4">
-          <div>
+        <div className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-card/50 p-4">
+          <div className="min-w-0">
             <p className="text-sm font-semibold">Dark mode</p>
-            <p className="text-xs text-muted-foreground">Easier reading at night.</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">Easier reading at night.</p>
           </div>
-          <Switch checked={dark} onCheckedChange={toggle} />
+          <Switch checked={dark} onCheckedChange={toggle} aria-label="Toggle dark mode" />
         </div>
-        <Button variant="hero" onClick={() => save.mutate()} disabled={save.isPending}>
+        <Button
+          variant="hero"
+          size="lg"
+          className="pressable"
+          onClick={() => save.mutate()}
+          disabled={save.isPending}
+        >
           {save.isPending ? "Saving…" : "Save changes"}
         </Button>
       </div>
 
-      <div className="glass-card rounded-2xl border-destructive/30 p-6">
+      <div className="glass-card rounded-3xl border-destructive/30 p-7">
         <h2 className="font-display text-base font-bold">Danger zone</h2>
-        <p className="mt-1.5 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Deleting your account permanently removes your saved reports, history and conversations.
         </p>
         <Button
           variant="destructive"
-          className="mt-4"
+          className="pressable mt-5"
           disabled={removeAccount.isPending}
           onClick={() => {
             if (window.confirm("Delete your account and all data? This cannot be undone.")) {
@@ -127,3 +145,4 @@ function Profile() {
     </div>
   );
 }
+

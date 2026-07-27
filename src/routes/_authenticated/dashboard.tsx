@@ -35,22 +35,31 @@ function Dashboard() {
   const library = useQuery({ queryKey: ["library"], queryFn: () => listLibrary() });
 
   return (
-    <div className="space-y-10">
-      <section className="text-center">
-        <h1 className="font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+    <div className="space-y-14">
+      <section className="relative isolate text-center">
+        <div className="halo pointer-events-none absolute inset-x-0 -top-24 -z-10 h-[340px]" />
+        <div
+          className="blob -z-10 left-[5%] -top-10 size-[240px] bg-primary/25"
+          aria-hidden="true"
+        />
+        <div
+          className="blob -z-10 right-[5%] -top-6 size-[260px] bg-cyan/25 [animation-delay:-9s]"
+          aria-hidden="true"
+        />
+        <h1 className="font-display animate-fade-up text-3xl font-extrabold tracking-tight md:text-5xl">
           What do you want to <span className="gradient-text">understand</span> today?
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
           Any food, invention, person, country, word or idea — we'll trace it back to its origin.
         </p>
-        <SearchBar className="mx-auto mt-6 max-w-2xl" autoFocus />
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
+        <SearchBar className="mx-auto mt-8 max-w-2xl" autoFocus />
+        <div className="mt-5 flex flex-wrap justify-center gap-2">
           {POPULAR_SEARCHES.map((topic) => (
             <Link
               key={topic}
               to="/discover/$topic"
               params={{ topic }}
-              className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              className="pressable rounded-full border border-border bg-card/70 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur transition-colors hover:border-primary/40 hover:bg-accent hover:text-foreground"
             >
               {topic}
             </Link>
@@ -59,8 +68,8 @@ function Dashboard() {
       </section>
 
       <section>
-        <h2 className="font-display text-lg font-bold">Browse by category</h2>
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <h2 className="font-display text-lg font-bold tracking-tight">Browse by category</h2>
+        <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {CATEGORIES.map((category) => {
             const Icon = (Icons[category.icon as keyof typeof Icons] ??
               Icons.Sparkle) as typeof Icons.Sparkle;
@@ -70,13 +79,13 @@ function Dashboard() {
                 onClick={() =>
                   navigate({ to: "/discover/$topic", params: { topic: category.sample } })
                 }
-                className="glass-card hover-lift rounded-2xl p-4 text-left"
+                className="glass-card hover-lift group rounded-3xl p-5 text-left"
               >
-                <span className="grid size-9 place-items-center rounded-xl bg-primary/10 text-primary">
+                <span className="grid size-10 place-items-center rounded-2xl bg-[image:var(--gradient-brand)] text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-110">
                   <Icon className="size-4" />
                 </span>
-                <p className="mt-3 text-sm font-semibold">{category.name}</p>
-                <p className="text-xs text-muted-foreground">e.g. {category.sample}</p>
+                <p className="mt-4 text-sm font-semibold">{category.name}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">e.g. {category.sample}</p>
               </button>
             );
           })}
@@ -84,23 +93,33 @@ function Dashboard() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-3">
-        <div className="glass-card rounded-2xl p-6 lg:col-span-2">
-          <p className="text-xs font-bold uppercase tracking-wider text-gold">Daily discovery</p>
+        <div className="glass-card gradient-ring relative isolate overflow-hidden rounded-3xl p-7 lg:col-span-2">
+          <div
+            className="blob -z-10 right-0 top-0 size-[220px] bg-gold/25"
+            aria-hidden="true"
+          />
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-gold">
+            <Icons.Sparkle className="size-3.5" />
+            Daily discovery
+          </p>
           {daily.isLoading ? (
-            <>
-              <Skeleton className="mt-3 h-7 w-48" />
-              <Skeleton className="mt-3 h-4 w-full" />
-              <Skeleton className="mt-2 h-4 w-3/4" />
-            </>
+            <div className="skeleton-sweep">
+              <Skeleton className="mt-4 h-8 w-48 rounded-xl" />
+              <Skeleton className="mt-4 h-4 w-full rounded-lg" />
+              <Skeleton className="mt-2 h-4 w-3/4 rounded-lg" />
+            </div>
           ) : daily.data ? (
             <>
-              <h3 className="font-display mt-2 text-2xl font-bold">{daily.data.topic}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-display mt-3 text-2xl font-extrabold tracking-tight md:text-3xl">
+                {daily.data.topic}
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
                 {daily.data.teaser}
               </p>
-              <Button variant="hero" className="mt-5" asChild>
+              <Button variant="hero" className="pressable mt-6" asChild>
                 <Link to="/discover/$topic" params={{ topic: daily.data.topic }}>
                   Explore this origin
+                  <Icons.ArrowRight className="size-4" />
                 </Link>
               </Button>
             </>
@@ -111,22 +130,34 @@ function Dashboard() {
           )}
         </div>
 
-        <div className="glass-card rounded-2xl p-6">
-          <h3 className="font-display text-base font-bold">Recent searches</h3>
-          <ul className="mt-3 space-y-2 text-sm">
+        <div className="glass-card rounded-3xl p-7">
+          <h3 className="font-display flex items-center gap-2 text-base font-bold">
+            <Icons.History className="size-4 text-primary" />
+            Recent searches
+          </h3>
+          <ul className="mt-4 space-y-1 text-sm">
             {(library.data?.history ?? []).slice(0, 7).map((item) => (
               <li key={item.id}>
                 <Link
                   to="/discover/$topic"
                   params={{ topic: item.query }}
-                  className="text-muted-foreground hover:text-foreground"
+                  className="flex items-center gap-2 rounded-xl px-2.5 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                 >
-                  {item.query}
+                  <Icons.Search className="size-3.5 shrink-0 opacity-60" />
+                  <span className="truncate">{item.query}</span>
                 </Link>
               </li>
             ))}
+            {library.isLoading &&
+              [0, 1, 2].map((i) => (
+                <li key={i} className="skeleton-sweep px-2.5 py-2">
+                  <Skeleton className="h-4 w-full rounded-lg" />
+                </li>
+              ))}
             {!library.isLoading && !library.data?.history.length && (
-              <li className="text-muted-foreground">Your searches will appear here.</li>
+              <li className="rounded-xl border border-dashed border-border px-3 py-6 text-center text-xs text-muted-foreground">
+                Your searches will appear here.
+              </li>
             )}
           </ul>
         </div>
@@ -134,3 +165,4 @@ function Dashboard() {
     </div>
   );
 }
+
