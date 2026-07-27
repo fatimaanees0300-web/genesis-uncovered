@@ -29,24 +29,31 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <section className="glass-card overflow-hidden rounded-2xl">
+    <section className="glass-card overflow-hidden rounded-3xl transition-shadow duration-300 hover:shadow-[var(--shadow-lift)]">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center gap-3 px-5 py-4 text-left"
+        aria-expanded={open}
+        className="flex w-full items-center gap-3 px-6 py-5 text-left transition-colors hover:bg-accent/40"
       >
-        <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+        <span className="grid size-10 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-brand)] text-primary-foreground shadow-sm">
           <Icon className="size-4" />
         </span>
-        <h2 className="font-display flex-1 text-base font-bold">{title}</h2>
+        <h2 className="font-display min-w-0 flex-1 text-base font-bold">{title}</h2>
         <ChevronDown
-          className={cn("size-4 text-muted-foreground transition-transform", open && "rotate-180")}
+          className={cn(
+            "size-4 shrink-0 text-muted-foreground transition-transform duration-300",
+            open && "rotate-180",
+          )}
         />
       </button>
-      {open && <div className="px-5 pb-5 pt-0 text-sm leading-relaxed">{children}</div>}
+      {open && (
+        <div className="animate-fade-up px-6 pb-6 pt-0 text-sm leading-relaxed">{children}</div>
+      )}
     </section>
   );
 }
+
 
 const CONFIDENCE_STYLES: Record<string, string> = {
   High: "bg-cyan/15 text-cyan border-cyan/30",
