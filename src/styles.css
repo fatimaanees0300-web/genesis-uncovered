@@ -238,9 +238,107 @@
 }
 
 @utility animate-fade-up {
-  animation: ov-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: ov-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @utility animate-float {
   animation: ov-float 6s ease-in-out infinite;
 }
+
+@keyframes ov-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(3%, -4%, 0) scale(1.06);
+  }
+  66% {
+    transform: translate3d(-3%, 3%, 0) scale(0.96);
+  }
+}
+
+@keyframes ov-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Soft abstract blob used behind hero sections. */
+@utility blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.5;
+  animation: ov-drift 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Faint dot grid backdrop. */
+@utility dot-grid {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--foreground) 12%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Gradient hairline border on a card. */
+@utility gradient-ring {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-brand);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}
+
+/* Shimmering placeholder sweep for loading skeletons. */
+@utility skeleton-sweep {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--foreground) 7%, transparent),
+      transparent
+    );
+    animation: ov-shimmer 1.6s infinite;
+  }
+}
+
+@utility pressable {
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
