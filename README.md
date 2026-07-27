@@ -49,7 +49,7 @@ In today's digital world, information is easily available, but meaningful contex
 Students, researchers, and curious learners often face problems such as:
 
 - Facts are available but disconnected.
-- Historical information is scattered across different sources.
+- Historical information is scattered across multiple sources.
 - Understanding the evolution of ideas requires extensive research.
 - Learning becomes focused on memorization instead of understanding.
 
@@ -166,47 +166,47 @@ The application provides:
 
 # 📸 Screenshots — OriginVerse In Action
 
-The following screenshots demonstrate the major features and user experience of OriginVerse.
+The following screenshots demonstrate the main features, interface, and user experience of OriginVerse.
 
 ---
 
-## 🏠 1. Homepage Interface
+## 📷 Screenshot 1: Homepage Interface
 
-The homepage provides users with an intuitive entry point to explore origins and discover historical insights using AI.
+The homepage provides users with an intuitive starting point to explore origins and discover historical insights using AI.
 
-![OriginVerse Homepage](screenshots/homepage.png)
-
----
-
-## ⚖️ 2. Comparison Feature
-
-The comparison interface allows users to analyze differences between related topics, concepts, or historical developments.
-
-![OriginVerse Comparison](screenshots/comparison.png)
+![Screenshot 1](screenshot1.png)
 
 ---
 
-## 🌙 3. Dark Mode Experience
+## 📷 Screenshot 2: Comparison Feature
 
-The dark mode interface provides a visually comfortable experience for users while maintaining accessibility and readability.
+The comparison feature allows users to analyze differences between related topics, concepts, or historical developments.
 
-![OriginVerse Dark Mode](screenshots/dark-mode.png)
-
----
-
-## 🔎 4. General Search & AI Exploration
-
-Users can search any topic and receive AI-generated origin stories, historical context, and structured explanations.
-
-![OriginVerse General Search](screenshots/general-search.png)
+![Screenshot 2](screenshot2.png)
 
 ---
 
-## 📜 5. Timeline Visualization
+## 📷 Screenshot 3: Dark Mode Interface
 
-The timeline feature presents historical evolution chronologically, helping users understand how ideas, inventions, and concepts developed over time.
+The dark mode feature provides a visually comfortable experience with improved accessibility for low-light environments.
 
-![OriginVerse Timeline](screenshots/timeline.png)
+![Screenshot 3](screenshot3.png)
+
+---
+
+## 📷 Screenshot 4: General Search & AI Exploration
+
+The search interface allows users to enter any topic and receive AI-generated origin stories, explanations, and historical context.
+
+![Screenshot 4](screenshot4.png)
+
+---
+
+## 📷 Screenshot 5: Timeline Visualization
+
+The timeline feature presents the evolution of topics chronologically, helping users understand historical progression and important milestones.
+
+![Screenshot 5](screenshot5.png)
 
 ---
 
@@ -327,14 +327,11 @@ genesis-uncovered/
 │   ├── pages/
 │   ├── assets/
 │
-├── public/
-│
-├── screenshots/
-│   ├── homepage.png
-│   ├── comparison.png
-│   ├── dark-mode.png
-│   ├── general-search.png
-│   └── timeline.png
+├── screenshot1.png
+├── screenshot2.png
+├── screenshot3.png
+├── screenshot4.png
+├── screenshot5.png
 │
 ├── package.json
 │
